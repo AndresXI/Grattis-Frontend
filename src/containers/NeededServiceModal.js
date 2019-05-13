@@ -59,12 +59,22 @@ export default class ProvidedServiceModal extends Component {
     } = this.state;
     let addressCoords;
 
+    // validate empty input strings
+    if (title === ''
+      || description === ''
+      || address === ''
+      || address === '') {
+      alert("Please don't leave any empty fields");
+      return;
+    }
+
+    // validate address
     const addressRegex = /^\s*\S+(?:\s+\S+){2}/;
     if (addressRegex.test(address)) {
       const coords = await this.getAddressCoords(address);
       addressCoords = JSON.stringify(coords);
     } else {
-      alert('bad adress');
+      alert('Invalid address');
       return;
     }
 
@@ -79,6 +89,13 @@ export default class ProvidedServiceModal extends Component {
     });
     // // re-fetch data to set marker on map
     this.props.refetchNeeded();
+    // reset form
+    this.setState({
+      title: '',
+      description: '',
+      address: '',
+      username: '',
+    });
   }
 
   render() {

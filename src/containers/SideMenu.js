@@ -34,7 +34,6 @@ export default class SideMenu extends Component {
     this.setState({ serviceNeededList: !this.state.serviceNeededList });
   }
 
-
   render() {
     return (
       <div className="side-menu">
