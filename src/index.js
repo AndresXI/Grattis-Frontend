@@ -14,7 +14,7 @@ import './static/sass/main.scss';
 import 'semantic-ui-css/semantic.min.css';
 import App from './App';
 
-
+// dev
 const httpLink = new HttpLink({
   uri: `http://${process.env.REACT_APP_SERVER_URL}/graphql`,
 });
