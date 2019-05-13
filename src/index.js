@@ -16,7 +16,7 @@ import App from './App';
 
 // dev
 const httpLink = new HttpLink({
-  uri: `http://${process.env.REACT_APP_SERVER_URL}/graphql`,
+  uri: `https://${process.env.REACT_APP_SERVER_URL}/graphql`,
 });
 
 // Create a WebSocket link:
