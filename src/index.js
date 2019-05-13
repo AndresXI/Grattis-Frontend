@@ -64,7 +64,6 @@ const allServicesNeededQuery = gql`
 const app = (
   <ApolloProvider client={client}>
     <Query
-      // fetchPolicy="network-only"
       query={allServicesNeededQuery}
     >
       {({ loading, error, data, refetch, subscribeToMore, }) => (

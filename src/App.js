@@ -20,10 +20,8 @@ const allServicesProvidedQuery = gql`
 }
 `;
 
-// TODO: Nest multiple queries and rename variables
 class App extends Component {
   render() {
-    // console.log('this', this.props);
     return (
       <Query query={allServicesProvidedQuery}>
         {({
@@ -33,6 +31,7 @@ class App extends Component {
               <SideMenu
                 refetchNeeded={this.props.refetchNeeded}
                 data={data}
+                neededServices={this.props.servicesNeeded}
                 refetch={refetch}
               />
               <MenuContainer

@@ -4,6 +4,7 @@ import { Button } from 'semantic-ui-react';
 import ProvidedServiceModal from './ProvidedServiceModal';
 import ServiceListModal from './ServiceListModal';
 import NeededServiceModal from './NeededServiceModal';
+import ServiceNeededListModal from './ServiceNeededListModal';
 
 
 export default class SideMenu extends Component {
@@ -13,6 +14,7 @@ export default class SideMenu extends Component {
       serviceProvidedModal: false,
       serviceListModal: false,
       serviceNeededModal: false,
+      serviceNeededList: false,
     };
   }
 
@@ -28,6 +30,10 @@ export default class SideMenu extends Component {
     this.setState({ serviceNeededModal: !this.state.serviceNeededModal });
   }
 
+  handleServiceNeededListClick = () => {
+    this.setState({ serviceNeededList: !this.state.serviceNeededList });
+  }
+
 
   render() {
     return (
@@ -40,6 +46,7 @@ export default class SideMenu extends Component {
         <Button color="blue" onClick={() => this.handleProvideServiceClick()}>Provide a service</Button>
         <Button color="red" onClick={() => this.handleServiceNeededClick()}>Ask for a service</Button>
         <Button color="teal" onClick={() => this.handleServiceListClick()}>Services Provided</Button>
+        <Button color="real" onClick={() => this.handleServiceNeededListClick()}>Services Needed</Button>
         <NeededServiceModal
           refetchNeeded={this.props.refetchNeeded}
           onClose={this.handleServiceNeededClick}
@@ -54,6 +61,11 @@ export default class SideMenu extends Component {
           refetch={this.props.refetch}
           onClose={this.handleProvideServiceClick}
           open={this.state.serviceProvidedModal}
+        />
+        <ServiceNeededListModal
+          data={this.props.neededServices}
+          onClose={this.handleServiceNeededListClick}
+          open={this.state.serviceNeededList}
         />
         {/* <div className="chat-box">
           <div className="container">

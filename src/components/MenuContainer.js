@@ -39,7 +39,7 @@ export default class MenuContainer extends Component {
           </p>
           <Button color="blue" onClick={() => this.handleProvidedServiceClick()}>Provide a service</Button>
           <Button color="red" onClick={() => this.handleServiceNeededClick()}>Ask for a service</Button>
-          <Button color="teal" onClick={() => this.handleServiceListClick()}>Current Services</Button>
+          <Button color="teal" onClick={() => this.handleServiceListClick()}>Services Provided</Button>
           <ServiceListModalMobile
             data={this.props.data}
             onClose={this.handleServiceListClick}
