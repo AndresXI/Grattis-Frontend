@@ -37,9 +37,9 @@ export default class SideMenu extends Component {
           providing free services. Simply create a new service your are willing to offer free of charge. A
           maker should show up on the map with the information you provided. Map markers appear live in real-time!
         </p>
-        <Button color="teal" onClick={() => this.handleProvideServiceClick()}>Provide a service</Button>
-        <Button color="blue" onClick={() => this.handleServiceNeededClick()}>Ask for a service</Button>
-        <Button color="teal" onClick={() => this.handleServiceListClick()}>Current Services</Button>
+        <Button color="blue" onClick={() => this.handleProvideServiceClick()}>Provide a service</Button>
+        <Button color="red" onClick={() => this.handleServiceNeededClick()}>Ask for a service</Button>
+        <Button color="teal" onClick={() => this.handleServiceListClick()}>Services Provided</Button>
         <NeededServiceModal
           refetchNeeded={this.props.refetchNeeded}
           onClose={this.handleServiceNeededClick}
@@ -55,7 +55,7 @@ export default class SideMenu extends Component {
           onClose={this.handleProvideServiceClick}
           open={this.state.serviceProvidedModal}
         />
-        <div className="chat-box">
+        {/* <div className="chat-box">
           <div className="container">
             <p>Hello?</p>
             <p>Hello?</p>
@@ -72,7 +72,7 @@ export default class SideMenu extends Component {
             <p>Hello?</p>
             <p>Hello?</p>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

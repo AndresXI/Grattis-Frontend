@@ -15,11 +15,20 @@
 
 }
 
-.ui.teal.button {
+.ui.blue.button {
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-left: 1rem;
+  display: block;
 }
+
+.ui.red.button {
+  text-align: center;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  display: block;
+}
+
 
 @media only screen and (max-width: 630px) {
   .side-menu {

@@ -92,9 +92,6 @@ export default class Map extends Component {
     }
     // Update Needed Services
     if (prevProps.neededServices.getAllNeededServices && this.props.neededServices.getAllNeededServices) {
-      console.log('prev', prevProps.neededServices.getAllNeededServices.length);
-      console.log('current', this.props.neededServices.getAllNeededServices);
-      // console.log('data', prevProps.neededServices.getAllNeededServices)
       if (this.props.neededServices.getAllNeededServices.length !== prevProps.neededServices.getAllNeededServices.length) {
         prevProps.neededServices.getAllNeededServices.forEach((service) => {
           const coords = JSON.parse(service.addressCoords);
@@ -148,7 +145,6 @@ export default class Map extends Component {
     }
 
     if (this.props.neededServices.getAllNeededServices) {
-      // console.log('data', prevProps.neededServices.getAllNeededServices)
       this.props.neededServices.getAllNeededServices.forEach((service) => {
         const coords = JSON.parse(service.addressCoords);
         const popUpText = `
@@ -201,6 +197,5 @@ export default class Map extends Component {
         <div id="map" />
       </div>
     )
-
   }
 }

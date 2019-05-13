@@ -3,6 +3,7 @@ import { Button } from 'semantic-ui-react';
 
 import ProvidedServiceModalMobile from '../containers/ProvidedServiceModalMobile';
 import ServiceListModalMobile from '../containers/ServiceListModalMobile';
+import NeededServiceModalMobile from '../containers/NeededServiceModalMobile';
 
 
 export default class MenuContainer extends Component {
@@ -11,6 +12,7 @@ export default class MenuContainer extends Component {
     this.state = {
       serviceProvidedModal: false,
       serviceListModal: false,
+      serviceNeededModal: false,
     };
   }
 
@@ -22,8 +24,11 @@ export default class MenuContainer extends Component {
     this.setState({ serviceListModal: !this.state.serviceListModal });
   }
 
+  handleServiceNeededClick = () => {
+    this.setState({ serviceNeededModal: !this.state.serviceNeededModal });
+  }
+
   render() {
-    // console.log('data is', this.props.data);
     return (
       <div className="menu-container">
         <div className="menu-contents">
@@ -32,8 +37,8 @@ export default class MenuContainer extends Component {
             providing free services. Simply create a new service your are willing to offer free of charge. A
             maker should show up on the map with the information you provided. Map markers appear live in real-time!
           </p>
-          <Button color="teal" onClick={() => this.handleProvidedServiceClick()}>Provide a service</Button>
-          <Button color="blue" onClick={() => this.handleProvideServiceClick()}>Ask for a service</Button>
+          <Button color="blue" onClick={() => this.handleProvidedServiceClick()}>Provide a service</Button>
+          <Button color="red" onClick={() => this.handleServiceNeededClick()}>Ask for a service</Button>
           <Button color="teal" onClick={() => this.handleServiceListClick()}>Current Services</Button>
           <ServiceListModalMobile
             data={this.props.data}
@@ -44,6 +49,11 @@ export default class MenuContainer extends Component {
             refetch={this.props.refetch}
             onClose={this.handleProvidedServiceClick}
             open={this.state.serviceProvidedModal}
+          />
+          <NeededServiceModalMobile
+            refetchNeeded={this.props.refetchNeeded}
+            onClose={this.handleServiceNeededClick}
+            open={this.state.serviceNeededModal}
           />
         </div>
       </div>
