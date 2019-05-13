@@ -46,7 +46,7 @@ export default class SideMenu extends Component {
         <Button color="blue" onClick={() => this.handleProvideServiceClick()}>Provide a service</Button>
         <Button color="red" onClick={() => this.handleServiceNeededClick()}>Ask for a service</Button>
         <Button color="teal" onClick={() => this.handleServiceListClick()}>Services Provided</Button>
-        <Button color="real" onClick={() => this.handleServiceNeededListClick()}>Services Needed</Button>
+        <Button color="teal" onClick={() => this.handleServiceNeededListClick()}>Services Needed</Button>
         <NeededServiceModal
           refetchNeeded={this.props.refetchNeeded}
           onClose={this.handleServiceNeededClick}

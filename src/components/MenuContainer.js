@@ -4,6 +4,7 @@ import { Button } from 'semantic-ui-react';
 import ProvidedServiceModalMobile from '../containers/ProvidedServiceModalMobile';
 import ServiceListModalMobile from '../containers/ServiceListModalMobile';
 import NeededServiceModalMobile from '../containers/NeededServiceModalMobile';
+import ServiceNeededListModalMobile from '../containers/ServiceNeededListModalMobile';
 
 
 export default class MenuContainer extends Component {
@@ -13,6 +14,7 @@ export default class MenuContainer extends Component {
       serviceProvidedModal: false,
       serviceListModal: false,
       serviceNeededModal: false,
+      serviceNeededListModal: false,
     };
   }
 
@@ -28,6 +30,10 @@ export default class MenuContainer extends Component {
     this.setState({ serviceNeededModal: !this.state.serviceNeededModal });
   }
 
+  handleServicesNeededListClick = () => {
+    this.setState({ serviceNeededListModal: !this.state.serviceNeededListModal });
+  }
+
   render() {
     return (
       <div className="menu-container">
@@ -40,6 +46,7 @@ export default class MenuContainer extends Component {
           <Button color="blue" onClick={() => this.handleProvidedServiceClick()}>Provide a service</Button>
           <Button color="red" onClick={() => this.handleServiceNeededClick()}>Ask for a service</Button>
           <Button color="teal" onClick={() => this.handleServiceListClick()}>Services Provided</Button>
+          <Button color="teal" onClick={() => this.handleServicesNeededListClick()}>Services Needed</Button>
           <ServiceListModalMobile
             data={this.props.data}
             onClose={this.handleServiceListClick}
@@ -54,6 +61,11 @@ export default class MenuContainer extends Component {
             refetchNeeded={this.props.refetchNeeded}
             onClose={this.handleServiceNeededClick}
             open={this.state.serviceNeededModal}
+          />
+          <ServiceNeededListModalMobile
+            data={this.props.neededServices}
+            onClose={this.handleServicesNeededListClick}
+            open={this.state.serviceNeededListModal}
           />
         </div>
       </div>

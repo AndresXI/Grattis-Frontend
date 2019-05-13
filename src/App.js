@@ -16,6 +16,7 @@ const allServicesProvidedQuery = gql`
     address
     addressCoords
     photoUrl
+    id
   }
 }
 `;
@@ -36,6 +37,7 @@ class App extends Component {
               />
               <MenuContainer
                 data={data}
+                neededServices={this.props.servicesNeeded}
                 refetchNeeded={this.props.refetchNeeded}
                 refetch={refetch}
               />

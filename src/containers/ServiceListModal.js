@@ -7,7 +7,8 @@ export default class ServiceListModal extends Component {
     let serviceList;
     if (this.props.data.getAllProvidedServices) {
       serviceList = this.props.data.getAllProvidedServices.map(
-        service => <p>{service.title} By: {service.username} - Address: {service.address}</p>,
+        service => (
+          <p key={service.id}>{service.title} By: {service.username} - Address: {service.address}</p>),
       );
     }
     return (

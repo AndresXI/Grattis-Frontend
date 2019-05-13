@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Modal, Button } from 'semantic-ui-react';
 
 
-export default class ServiceListModal extends Component {
+export default class ServiceNeededListModalMobile extends Component {
   render() {
     let serviceList;
     if (this.props.data.getAllNeededServices) {
