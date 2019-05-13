@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import gql from 'graphql-tag';
-import { Modal, Button, Form } from 'semantic-ui-react';
-import { Mutation } from 'react-apollo';
-
+import { Modal, Button } from 'semantic-ui-react';
 
 export default class ServiceListModalMobile extends Component {
   render() {
@@ -14,7 +11,7 @@ export default class ServiceListModalMobile extends Component {
     }
     return (
       <Modal open={this.props.open}>
-        <Modal.Header>Current List of Services</Modal.Header>
+        <Modal.Header>Current List of Services Provided</Modal.Header>
         <Modal.Content>
           {serviceList}
           <Button onClick={this.props.onClose}>Cancel</Button>

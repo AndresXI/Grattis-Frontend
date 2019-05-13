@@ -15,28 +15,55 @@
 
   & .app-description {
     padding-bottom: 3rem;
+    padding-right: 1rem;
+  }
+
+  & .provided-marker {
+    height: 3rem;
+  }
+
+  & .provided-container {
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  & .needed-marker {
+    height: 3rem;
+  }
+
+  & .needed-container {
+    display: flex;
+    align-items: center;
+  }
+
+  & .legend-container {
+    padding-top: 44vh;
   }
 
 }
 
+.app-description-mobile {
+  padding-bottom: 2.4rem;
+}
+
 .ui.blue.button {
   text-align: center;
-  margin-top: 2rem;
-  margin-left: 1rem;
+  margin: 1rem auto;
   display: block;
 }
 
 .ui.teal.button {
   text-align: center;
   margin-top: 2rem;
-  margin-left: 1rem;
+  margin: 1rem auto;
   display: block;
 }
 
 .ui.red.button {
   text-align: center;
   margin-top: 2rem;
-  margin-left: 1rem;
+  margin: 1rem auto;
   display: block;
 }
 
@@ -48,8 +75,8 @@
 
   #nav-icon1 {
     display: inline-block;
-    width: 55px;
-    height: 40px;
+    width: 53px;
+    height: 38px;
   }
 }
 
@@ -57,7 +84,7 @@
 #nav-icon1 {
   z-index: 10000;
   position: absolute;
-  bottom: 3rem;
+  bottom: 2rem;
   margin-left: 2rem;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -137,9 +164,34 @@
 }
 
 .menu-contents {
-  padding-top: 10rem;
+  padding-top: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
+
+
+  & .provided-marker {
+    height: 3rem;
+  }
+
+  & .needed-marker {
+    height: 3rem;
+  }
+
+  & .provided-container {
+    padding-bottom: 1rem;
+  }
+
+  & .legend-title {
+    padding-bottom: 1rem;
+  }
+
+  & .legend-container {
+    padding-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
 .dimmed.dimmable>.ui.visible.dimmer,

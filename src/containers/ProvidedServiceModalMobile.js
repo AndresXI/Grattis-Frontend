@@ -91,7 +91,7 @@ export default class ProvidedServiceModalMobile extends Component {
       <Mutation mutation={SERVICE_PROVIDED_MUTATION}>
         {createProvidedService => (
           <Modal open={this.props.open}>
-            <Modal.Header>Submit a Free Service Mobile</Modal.Header>
+            <Modal.Header>Submit a Free Service</Modal.Header>
             <Modal.Content>
               <Form>
                 <Form.Field>
