@@ -8,7 +8,11 @@ export default class ServiceListModal extends Component {
     if (this.props.data.getAllProvidedServices) {
       serviceList = this.props.data.getAllProvidedServices.map(
         service => (
-          <p key={service.id}>{service.title} By: {service.username} - Address: {service.address}</p>),
+          <>
+            <p key={service.id}>{service.title}, by: {service.username} - Address: {service.address}</p>
+            <hr />
+          </>
+        ),
       );
     }
     return (
@@ -16,7 +20,7 @@ export default class ServiceListModal extends Component {
         <Modal.Header>Current List of Services Provided</Modal.Header>
         <Modal.Content>
           {serviceList}
-          <Button onClick={this.props.onClose}>Cancel</Button>
+          <Button onClick={this.props.onClose}>Close</Button>
         </Modal.Content>
       </Modal>
     );

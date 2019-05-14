@@ -6,7 +6,11 @@ export default class ServiceListModalMobile extends Component {
     let serviceList;
     if (this.props.data.getAllProvidedServices) {
       serviceList = this.props.data.getAllProvidedServices.map(
-        service => <p key={service.id}>{service.title} By: {service.username} - Address: {service.address}</p>,
+        service => (
+          <>
+            <li key={service.id}>{service.title}, by: {service.username} - Address: {service.address}</li>
+          </>
+        ),
       );
     }
     return (
@@ -14,7 +18,7 @@ export default class ServiceListModalMobile extends Component {
         <Modal.Header>Current List of Services Provided</Modal.Header>
         <Modal.Content>
           {serviceList}
-          <Button onClick={this.props.onClose}>Cancel</Button>
+          <Button onClick={this.props.onClose}>Close</Button>
         </Modal.Content>
       </Modal>
     );

@@ -144,16 +144,7 @@ export default class ProvidedServiceModal extends Component {
                     name="address"
                     value={this.state.address}
                     onChange={this.onInputChange}
-                    placeholder="Address, ex: 2240 Dominion St, Durham, NC 27704"
-                  />
-                </Form.Field>
-                <Form.Field>
-                  <label>Photo Url</label>
-                  <input
-                    name="photoUrl"
-                    value={this.state.photoUrl}
-                    onChange={this.onInputChange}
-                    placeholder="Photo url"
+                    placeholder="ex: 2240 Dominion St, Durham, NC 27704"
                   />
                 </Form.Field>
                 <Button

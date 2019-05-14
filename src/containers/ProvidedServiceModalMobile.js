@@ -147,15 +147,6 @@ export default class ProvidedServiceModalMobile extends Component {
                     placeholder="ex: 2240 Dominion St, Durham, NC 27704"
                   />
                 </Form.Field>
-                <Form.Field>
-                  <label>Photo Url</label>
-                  <input
-                    name="photoUrl"
-                    value={this.state.photoUrl}
-                    onChange={this.onInputChange}
-                    placeholder="Photo url"
-                  />
-                </Form.Field>
                 <Button
                   type="submit"
                   onClick={() => { this.handleSubmit(createProvidedService); this.props.onClose(); }}
